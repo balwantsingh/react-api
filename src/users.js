@@ -5,7 +5,7 @@ function Users() {
     const [user, setUser] = useState([])
 
     useEffect(()=> {
-        fetch('https://jsonplaceholder.typicode.com/posts').then((data)=> {
+        fetch('http://jsonplaceholder.typicode.com/posts').then((data)=> {
             //console.warn("data", data)
             data.json().then(result=> {
                 console.warn("result", result)
