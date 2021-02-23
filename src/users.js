@@ -5,7 +5,7 @@ function Users() {
     const [user, setUser] = useState([])
 
     useEffect(()=> {
-        fetch('http://dummy.restapiexample.com/api/v1/employees').then((data)=> {
+        fetch('https://jsonplaceholder.typicode.com/posts').then((data)=> {
             //console.warn("data", data)
             data.json().then(result=> {
                 console.warn("result", result)
@@ -40,7 +40,6 @@ function Users() {
                                 <td>{item.employee_name}</td>
                                 <td>{item.employee_salary}</td>
                                 <td>{item.employee_age}</td>
-
                             </tr>
                         )
                     }
