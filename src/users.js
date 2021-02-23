@@ -2,25 +2,26 @@ import React, { useState, useEffect, Fragment } from 'react'
 import { Table } from 'react-bootstrap'
 function Users() {
 
-    const [user, setUser] = useState([])
+    
 
-    useEffect(()=> {
-        fetch('http://jsonplaceholder.typicode.com/posts').then((data)=> {
-            //console.warn("data", data)
-            data.json().then(result=> {
-                console.warn("result", result)
-                setUser(result.data)
-            })
-        })
-    },[])
-
-    // const [user, setUser] = useState([
-    //     { name: 'Neeraj', age: '28', address: 'Noida' },
-    //     { name: 'Sandeep', age: '68', address: 'Delhi' },
-    //     { name: 'James', age: '20', address: 'Gurgaon' },
-    //     { name: 'Peter', age: '58', address: 'UK' },
-    //     { name: 'Shambhu', age: '48', address: 'Chandigarh' },
-    // ])
+    // FOR FETCH API DATA
+    // useEffect(()=> {
+    //     fetch('http://dummy.restapiexample.com/api/v1/employees').then((data)=> {
+    //         //console.warn("data", data)
+    //         data.json().then(result=> {
+    //             console.warn("result", result)
+    //             setUser(result.data)
+    //         })
+    //     })
+    // },[])
+    const [user, setUser] = useState([
+    
+        { name: 'Neeraj', age: '28', address: 'Noida' },
+        { name: 'Sandeep', age: '68', address: 'Delhi' },
+        { name: 'James', age: '20', address: 'Gurgaon' },
+        { name: 'Peter', age: '58', address: 'UK' },
+        { name: 'Shambhu', age: '48', address: 'Chandigarh' },
+    ])
     return (
         <Fragment>
             <div className="container">
@@ -36,10 +37,10 @@ function Users() {
                     {
                         user.map((item,index)=>
                             <tr key={index}>
-                                <td>{item.id}</td>
-                                <td>{item.employee_name}</td>
-                                <td>{item.employee_salary}</td>
-                                <td>{item.employee_age}</td>
+                                <td>{index}</td>
+                                <td>{item.name}</td>
+                                <td>{item.age}</td>
+                                <td>{item.address}</td>
                             </tr>
                         )
                     }
